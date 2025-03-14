@@ -24,7 +24,7 @@ public class ResultadoEscolar {
         //condição ternária (usada para abrevião de algoritmos)
         int nota3 = 7;
         System.out.println("---Condição ternária---");
-        String resultado = nota>=7 ? "Aprovado" : "Reprovado";
+        String resultado = nota3>=7 ? "Aprovado" : "Reprovado";
         System.out.println(resultado);
 
 
