@@ -1,18 +1,12 @@
-## Getting Started
+# 📚 Exemplos de Estruturas de Repetição - Aula Dio sintaxe básica com Java
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Repositório com exemplos de códigos sobre as estruturas de repetição aprendidas na aula de sintaxe básica com Java. Este repositório contém exemplos práticos e simples que demonstram como usar as principais estruturas de repetição, como `for`, `while` e `do-while`, em Java. 🚀
 
-## Folder Structure
+## 🔥 Estruturas de Repetição
+Aqui você encontrará exemplos práticos de como utilizar as principais estruturas de repetição para executar blocos de código várias vezes, com base em condições específicas:
 
-The workspace contains two folders by default, where:
+- **for**: Estrutura de repetição com controle de número de iterações.
+- **while**: Repetição baseada em uma condição que é verificada antes de cada iteração.
+- **do-while**: Repetição baseada em uma condição que é verificada depois de cada iteração.
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).

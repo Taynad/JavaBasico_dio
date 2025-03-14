@@ -1,18 +1,11 @@
-## Getting Started
+# 📚 Exemplos de Estruturas de Condicionais - Aula Dio sintaxe básica com Java
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Repositório com exemplos de códigos referentes às estruturas de condicionais aprendidas na aula dio sintaxe básica com Java. Este repositório contém diversos exemplos práticos que demonstram como trabalhar com `if`, `else if`, `else`, `switch`, ajudando na compreensão dos conceitos essenciais de decisão em programação. 🚀
 
-## Folder Structure
+## 🔥 Estruturas de Condicionais
+Neste repositório você encontrará exemplos simples, mas completos, das principais estruturas de controle de fluxo em Java:
 
-The workspace contains two folders by default, where:
-
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
-
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+- **if**: Estrutura condicional simples para realizar verificações.
+- **else if**: Para múltiplas condições encadeadas.
+- **else**: Condicional final para quando nenhuma das anteriores for verdadeira.
+- **switch**: Alternativa para múltiplos casos de decisão.
