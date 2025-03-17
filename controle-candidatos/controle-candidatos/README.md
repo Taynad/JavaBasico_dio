@@ -1,18 +1,27 @@
-## Getting Started
+## ⚡Controle de Fluxo - Desafio
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+O desafio consiste em exercitar o que foi aprendido no módulo de **Controle de Fluxo** utilizando as estruturas 'for', 'try/catch', 'exception' e exercitando a lógica de programação.
 
-## Folder Structure
+## Explicando o desafio
 
-The workspace contains two folders by default, where:
+O sistema deverá receber **dois parâmetros via terminal** que representarão dois números inteiros, com estes dois números você deverá obter a quantidade de interações ('for') e realizar a impressão no console ('System.out.print') dos números incrementados, exemplo:
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+### Exemplo de funcionamento:  
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+🔹 Se você passar os números **12 e 30**, teremos uma interação (`for`) com **18 ocorrências** para imprimir os números, como:  
+➡️ `"Imprimindo o número 1"`  
+➡️ `"Imprimindo o número 2"`  
+➡️ `"Imprimindo o número 3"`  
+... e assim por diante até **18**.  
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+⚠️ **Regra de validação:**  
+Se o **primeiro parâmetro for MAIOR** que o segundo, deverá ser lançada uma exceção customizada chamada **`ParametrosInvalidosException`**, com a seguinte mensagem:  
+🚨 `"O segundo parâmetro deve ser maior que o primeiro"`  
 
-## Dependency Management
+---
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+## 👩‍💻 Desenvolvido por:  
+- [Tayna dos Santos](https://www.linkedin.com/in/tayna-dos-santos-9b61b2219/)  
+
+#### ✍️ Autores do Desafio  
+- [Gleyson Sampaio](https://github.com/glysns)  
