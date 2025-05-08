@@ -1,8 +1,7 @@
 package enumEXemplo;
 
 public enum EstadoBrasieiro {
-    SAO_PAULO, RIO_DE_JANEIRO, PIAUI, MARANHAO;
-
+    
     private String nome;
     private String sigla;
     
