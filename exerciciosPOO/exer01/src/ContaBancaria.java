@@ -53,8 +53,7 @@ public class ContaBancaria {
     }
 
     public void depositarDinheiro(){
-            consultarSaldo();
-
+        
             System.out.println("Qual o valor que deseja depositar?");
             Double valorDeposito = scanner.nextDouble();
             saldo += valorDeposito;
@@ -85,17 +84,17 @@ public class ContaBancaria {
 
 
         if(pagamento.equals("cheque especial") && valorBoleto <= chequeEspecial){
-            Double novoCheque = chequeEspecial - valorBoleto;
+            chequeEspecial -= valorBoleto;
             Double taxa = (valorBoleto*20)/100;
 
             System.out.println("Boleto pago com sucesso!");
-            System.out.printf("Seu cheque especial atual é: R$ %.2f\n", novoCheque);
+            System.out.printf("Seu cheque especial atual é: R$ %.2f\n", chequeEspecial);
             System.out.printf("A taxa cobrada será de: R$ %.2f\n", taxa);
 
         }else if (pagamento.equals("saldo") && valorBoleto <= saldo){
-            Double novoSaldo = saldo - valorBoleto;
+            saldo -= valorBoleto;
             System.out.println("Boleto pago com sucesso!");
-            System.out.printf("Seu saldo atual é: R$ %.2f\n", novoSaldo);
+            System.out.printf("Seu saldo atual é: R$ %.2f\n", saldo);
         }else {
             System.out.println("Forma de pagamento inválida ou saldo insuficiente.");
         }
