@@ -19,7 +19,8 @@ public class ContaBancaria {
             System.out.println("2. Consultar cheque");
             System.out.println("3. Depositar dinheiro");
             System.out.println("4. Sacar dinheiro");
-            System.out.println("5. Sair");
+            System.out.println("5. Pagar boleto");
+            System.out.println("6. Sair");
             System.out.println("Escolha uma opção: ");
             opcao = scanner.nextInt();
             scanner.nextLine();
@@ -29,11 +30,12 @@ public class ContaBancaria {
                 case 2 -> consultarCheque();
                 case 3 -> depositarDinheiro();
                 case 4 -> sacarDinheiro();
-                case 5 -> System.out.println("Saindo....");
+                case 5 -> pagarBoleto();
+                case 6 -> System.out.println("Saindo....");
                 default -> System.out.println("Opção inválida.");
                     
             }
-        }while (opcao != 5);
+        }while (opcao != 6);
     }
 
     public void consultarSaldo(){
@@ -51,11 +53,13 @@ public class ContaBancaria {
     }
 
     public void depositarDinheiro(){
+            consultarSaldo();
+
             System.out.println("Qual o valor que deseja depositar?");
             Double valorDeposito = scanner.nextDouble();
-            double saldoNovo = valorDeposito + saldo;
+            saldo += valorDeposito;
             System.out.println("Valor depositado com sucesso!");
-            System.out.printf("Seu novo saldo é: R$ " + "%.2f", saldoNovo);
+            System.out.printf("Seu novo saldo é: R$ " + "%.2f", saldo);
     }
 
     public void sacarDinheiro (){
@@ -64,14 +68,38 @@ public class ContaBancaria {
         if(valorSaq > saldo){
             System.out.println("Saldo insuficiente");
         }else{
-            Double saldoNovo = saldo - valorSaq;
+            saldo -= valorSaq;
             System.out.println("R$ " + valorSaq + " sacado com sucesso!");
-            System.out.printf("Seu novo saldo é: R$ " + "%.2f", saldoNovo);
+            System.out.printf("Seu novo saldo é: R$ " + "%.2f", saldo);
         }
     }
 
     public void pagarBoleto(){
+        consultarCheque();
 
+        System.out.println("Que realizar esse pagamento com o cheque especial ou saldo da conta? ");
+        String pagamento = scanner.nextLine().toLowerCase().trim();
+
+        System.out.println("Qual o valor do boleto que deseja pagar: R$ ");
+        Double valorBoleto = scanner.nextDouble();
+
+
+        if(pagamento.equals("cheque especial") && valorBoleto <= chequeEspecial){
+            Double novoCheque = chequeEspecial - valorBoleto;
+            Double taxa = (valorBoleto*20)/100;
+
+            System.out.println("Boleto pago com sucesso!");
+            System.out.printf("Seu cheque especial atual é: R$ %.2f\n", novoCheque);
+            System.out.printf("A taxa cobrada será de: R$ %.2f\n", taxa);
+
+        }else if (pagamento.equals("saldo") && valorBoleto <= saldo){
+            Double novoSaldo = saldo - valorBoleto;
+            System.out.println("Boleto pago com sucesso!");
+            System.out.printf("Seu saldo atual é: R$ %.2f\n", novoSaldo);
+        }else {
+            System.out.println("Forma de pagamento inválida ou saldo insuficiente.");
+        }
+        
     }
 
     
