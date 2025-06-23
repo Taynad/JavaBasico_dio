@@ -5,9 +5,9 @@ public class ListaTarefa {
     //atributo 
     private List<Tarefa> tarefaList;
 
-    public ListaTarefa() {
-        this.tarefaList = new ArrayList<>();
-    }
+        public ListaTarefa() {
+            this.tarefaList = new ArrayList<>();
+        }
 
     //métodos
     public void adicionarTarefa(String descricao){
