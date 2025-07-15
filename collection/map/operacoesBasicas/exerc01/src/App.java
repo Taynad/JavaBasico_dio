@@ -11,7 +11,6 @@ public class App {
         agendaContatos.exibirContatos();
         System.out.println("----------------------------------");
 
-        agendaContatos.removerContato("Tayna DIO");
         agendaContatos.exibirContatos();
         System.out.println("----------------------------------");
 
