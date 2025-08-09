@@ -1,5 +1,8 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -40,6 +43,41 @@ public class App {
             .average()
             .orElse(0.0);
         System.out.println("A média dos números é: " + mediaNumbers);
+
+        Map<String, Integer> messesVendas = new HashMap<>();
+        messesVendas.put("Janeiro", 18000);
+        messesVendas.put("Fevereiro", 17890);
+        messesVendas.put("Março", 20764);
+        messesVendas.put("Abril", 21345);
+        messesVendas.put("Maio", 24512);
+
+        Map.Entry<String, Integer> mesComMaisVendas = messesVendas.entrySet()
+            .stream()
+            .max(Map.Entry.comparingByValue())
+            .orElse(null);
+        
+        System.out.println("O mês com maior venda foi: " + mesComMaisVendas);
+
+        Map<String, List<Double>> produtosFornecedores= new HashMap<>();
+        produtosFornecedores.put("Arroz", new ArrayList<>());
+        produtosFornecedores.get("Arroz").add(21.99);
+        produtosFornecedores.get("Arroz").add(19.00);
+        produtosFornecedores.get("Arroz").add(18.98);
+
+        produtosFornecedores.put("Feijão", new ArrayList<>());
+        produtosFornecedores.get("Feijão").add(12.00);
+        produtosFornecedores.get("Feijão").add(16.00);
+        produtosFornecedores.get("Feijão").add(18.00);
+        produtosFornecedores.get("Feijão").add(14.00);
+
+        double somaTotal = produtosFornecedores.values().stream()
+            .flatMap(List::stream)
+            .mapToDouble(Double::doubleValue)
+            .sum();
+        System.out.println("O total é: " + somaTotal);
+
+        
+        
 
             
         
