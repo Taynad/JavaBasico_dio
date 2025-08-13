@@ -1,25 +1,94 @@
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
+import javax.print.DocFlavor.STRING;
+
 public class App {
-    
+
+    public void buscarPorId(int id){
+        
+        
+    }
         public static void main(String[] args) throws Exception {
-        //Crie um Optional com o nome "Tayna" e verifique se ele está presente
-        Optional<String> nome = Optional.of("Tayna");
-        nome.ifPresent(System.out::println);
+            //exerc01
+            Produto p1 = new Produto("Notebook", 3000.00, 10.0); // com desconto
+            Produto p2 = new Produto("Mouse", 150.00, null);     // sem
 
-        //Crie um Optional vazio e use orElseThrow para lançar uma exceção IllegalArgumentException com a mensagem "Valor não encontrado"
-        Optional<String> spring = Optional.of("Spring Boot");
-        spring.ifPresent(valor -> System.out.println("Tecnologia " + valor));
+            p1.verificandoNulo();
+            p2.verificandoNulo();
 
-        //Crie um Optional com o valor "Spring Boot" e use ifPresent para imprimir:"Tecnologia: Spring Boot"
-        Optional<String> linguagem = Optional.of("java").map(valor -> valor.toUpperCase());
-        linguagem.ifPresent(System.out::println);
+            //EXERCÍCIOS BÁSICOS
+            //EXERC-01
+            Optional<String> linguagem = Optional.ofNullable("Java");
+            if(linguagem.isPresent()){
+                System.out.println("Linguagem: " + linguagem);
+            }else{
+                System.out.println("Nenhum valor presente");
+            }
 
-        
-        
-        //Crie um Optional com "java" e use map para transformar em maiúsculas.
-        Optional<String> excecao = Optional.empty();
-        excecao.orElseThrow(() -> new IllegalArgumentException("Valor não encontrado"));
+            //EXERC-02
+            Optional<String> vazio = Optional.empty();
+            if(vazio.isEmpty()){
+                System.out.println("Nenhum valor presente");
+            }else{
+                System.out.println(vazio);
+            }
+
+            //EXERC-03
+            String valorNulo = null;
+            String nulo = Optional.ofNullable(valorNulo).orElse("Valor padrão");
+            System.out.println(nulo);
+
+            Optional<Integer> number = Optional.ofNullable(50);
+                number.ifPresent(n -> System.out.println("O número é: " + n));
+
+            //EXERCÍCIOS INTERMEDIÁRIOS
+            //EXERC-05
+            Optional<String> name = Optional.ofNullable("TAYNA");
+            name
+                .map(n -> n.toLowerCase())
+                .ifPresent(i -> System.out.println(i));
+            
+            //EXERC-06
+            Optional<String> frameJava = Optional.ofNullable("Spring Boot");
+            frameJava.filter(n -> n.contains("Boot"))
+                    .ifPresentOrElse(
+                        v -> System.out.println("Valor Aceito"), 
+                        () -> System.out.println("Valor rejeitado"));
+            
+            //EXERC-07
+            Double numeroVazio = null;
+            Optional<Double> valorPadrao = Optional.ofNullable(numeroVazio);
+                Double valorGerado = valorPadrao.orElseGet(() -> Math.random());
+                System.out.println(valorGerado);
+            
+            //EXERC-09
+            Optional<String> adm = Optional.of("Admin");
+            adm
+                .map(n -> n.toLowerCase())
+                .filter(n -> n.equals("admin"))
+                .ifPresent(i -> System.out.println(i));
+
+            //EXERC-10
+            App app = new App();
+            app.buscarPorId(2);
+            
+            //EXERC-08
+            String workNull = null;
+            Optional<String> novaPalavra = Optional.ofNullable(workNull);
+            novaPalavra
+                .orElseThrow(() -> new IllegalArgumentException("Valor não encontrado"));
+
+                     
+            
+
+            
+                        
+
+            
+
+            
 
 
         
